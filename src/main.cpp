@@ -1,19 +1,15 @@
 #include <iostream>
-#include "stack.h"
+#include "car.h"
 
 int main() {
-// Test der Datenstruktur STACK
-    Stack *s;
-    s = create_stack(3);
-    push(s, 'a');
-    push(s, 'b');
-    push(s, 'c');
-    push(s, 'd');
-    while (!isEmpty(s))
-        std::cout << pop(s) << std::endl;
-    pop(s);
-    destroy_stack(s);
-    std::cin.ignore();
+    Car p1(1001,"Beetle", 115);
+    p1.print();
+    Car p2(1234);
+    p2.print();
+    std::cout << "---------\n";
+    p2.setMarke("Lada");
+    p2.setLeistung(125);
+    p2.print();
+
     return 0;
 }
-
