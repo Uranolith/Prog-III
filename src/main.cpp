@@ -1,39 +1,31 @@
 #include <iostream>
 
-using namespace std;
-
-int ohjeh(long i, double r, int j);
-int ohjeh(int i, long j, double r);
-int ohjeh(int i, int j);
-
 int main() {
-    ohjeh(1, 'b');
-    ohjeh(1L, 1.0, 1);
-    ohjeh(static_cast<int>(2.3), static_cast<int>(2.3));
-    ohjeh(2.3, 1L, static_cast<double>(1));
-    ohjeh(1,3);
+
+    //const type name = value;		    Konstante vom Typ type
+    //type * const name = value;		konstanter Zeiger auf eine Variable vom Typ type
+    //const type *name = value;		    (variabler) Zeiger auf eine Konstante vom Typ type
+    //const type * const name = value;	konstanter Zeiger auf eine Konstante vom Typ type
 
 
-    /*  1.	Exakte Übereinstimmung: keine Umwandlung.
-     *  2.	Umwandlung von char und short nach int (integrale Erweiterung) sowie von float nach double
-     *  3.	Standard-Umwandlungen wie Sie auch in C üblich sind
-     *      (u. U. in Verbindung mit Informa¬tionsverlust, z. B. int nach float oder long nach int).
-     */
+    int i;                              //  Variable i vom Typ int
+    int *ip;                            //  (variabler) Zeiger ip auf eine Variable vom Typ int
+    int *const cp = &i;                 //  Definition eines konstanten Zeigers cp auf eine Variable vom Typ int
+    const int ci = 7;                   //  Definition einer Konstanten ci vom Typ int mit dem Wert 7
+    const int *cip;                     //  (variabler) Zeiger cip auf ein Konstante vom Typ int
+    const int *const cicp = &ci;        //  Definition eines konstanten Zeigers cicp auf eine konstante vom Typ int
 
+
+            i = ci;                     //  TRUE
+         // ci = 8;                     //  FALSE                    
+            *cp = ci;                   //  TRUE
+         // cp = &ci;                   //  FALSE
+            cip = &ci;                  //  TRUE
+            cip = cicp;                 //  TRUE
+         // *cip = 7;                   //  FALSE
+         // ip = cip;                   //  FALSE
+         
     return 0;
 }
-
-int ohjeh(long i, double r, int j = 3) {
-    std::cout << i << r << j << std::endl;
-}
-
-int ohjeh(int i, long j, double r) {
-    std::cout << i << r << j << std::endl;
-}
-
-int ohjeh(int i, int j) {
-    std::cout << i << j << std::endl;
-}
-
 
 
