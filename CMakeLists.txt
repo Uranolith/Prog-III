@@ -3,4 +3,7 @@ project(prog3)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(prog3 main.cpp stack.cpp stack.h)
+include_directories(${CMAKE_SOURCE_DIR}/headers)
+
+file(GLOB SOURCES "src/*")
+add_executable(prog3 ${SOURCES})
