@@ -1,51 +1,45 @@
-#include "../headers/stack.h"
+#include "stack.h"
 #include <iostream>
 
-Stack *create_stack(unsigned int depth) {
-    Stack *tmp = new Stack;
-    if (tmp == nullptr) {
+Stack::Stack(unsigned int depth) {
+    this->content = new char[depth];
+    if (this->content == nullptr) {
         exit(-1);
     }
-    tmp->content = new char[depth];
-    if (tmp->content == nullptr) {
-        exit(-1);
-    }
-    tmp->depth = depth;
-    tmp->top = 0;
-    return tmp;
+    this->depth = depth;
+    this->top = 0;
 }
 
-void push(Stack *tmp, char content) {
-    if (tmp->top == tmp->depth) {
+void Stack::push(char content) {
+    if (this->top == this->depth) {
         std::cout << "Der Stack ist voll." << std::endl;
         return;
     }
 
-    tmp->content[tmp->top] = content;
-    tmp->top++;
+    this->content[this->top] = content;
+    this->top++;
 }
 
-char pop(Stack *tmp) {
-    if (isEmpty(tmp)) {
+char Stack::pop() {
+    if (isEmpty()) {
         std::cout << "Der Stack ist leer." << std::endl;
         return '\0';
     }
 
-    char c = tmp->content[tmp->top-1];
-    tmp->content[tmp->top-1] = ' ';
-    tmp->top--;
+    char c = this->content[this->top - 1];
+    this->content[this->top - 1] = ' ';
+    this->top--;
 
     return c;
 }
 
-int isEmpty(Stack *tmp) {
-    if (tmp->top == 0) {
+int Stack::isEmpty() const {
+    if (this->top == 0) {
         return 1;
     }
     return 0;
 }
 
-void destroy_stack(Stack *tmp) {
-    delete[] tmp->content;
-    delete tmp;
+Stack::~Stack() {
+    delete[] this->content;
 }
