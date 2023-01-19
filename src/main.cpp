@@ -1,5 +1,5 @@
 #include <iostream>
-#include "stack.h"
+#include "../headers/stack.h"
 
 int main() {
 // Test der Datenstruktur STACK

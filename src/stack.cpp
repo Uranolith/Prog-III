@@ -1,4 +1,4 @@
-#include "stack.h"
+#include "../headers/stack.h"
 #include <iostream>
 
 Stack *create_stack(unsigned int depth) {
