@@ -9,12 +9,12 @@ Car::Car(unsigned long fgstnr, char *marke, unsigned int leistung) {
     this->print();
 }
 
-Car::Car(const Car &other){
+Car::Car(const Car &other) {
     copy(other);
 }
 
-Car &Car::operator=(Car const& other){
-    if(this != &other){
+Car &Car::operator=(Car const &other) {
+    if (this != &other) {
         //Speicher freiräumen
         delete[] this->marke;
         copy(other);
@@ -23,7 +23,7 @@ Car &Car::operator=(Car const& other){
 }
 
 Car::~Car() {
-    delete [] marke;
+    delete[] marke;
 }
 
 const char *Car::getMarke() const {
