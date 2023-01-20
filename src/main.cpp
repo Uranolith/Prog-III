@@ -1,15 +1,23 @@
 #include <iostream>
-#include "car.h"
+#include "geom.h"
 
 int main() {
-    Car p1(1001, "Beetle", 115);
-    p1.print();
-    Car p2(1234);
-    p2.print();
-    std::cout << "---------\n";
-    p2.setMarke("Lada");
-    p2.setLeistung(125);
-    p2.print();
+    Punkt p1(0, 0);
+    Punkt p2(3, 4);
+    Geom g1(p1, 5);
+    Geom g2(p2, 4, 4);
+    g1.print();
+    g2.print();
+    g2.setLaenge(5);
+    Punkt pt1(2, 2);
+    Punkt pt2(5, 15);
+    g1.Enthaelt(pt1);
+    g1.Enthaelt(pt2);
+    if (g1.getUmfang() > g2.getUmfang()) {
+        std::cout << "Umfang von g1 > g2" << std::endl;
+    } else {
+        std::cout << "Umfang von g1 <= g2" << std::endl;
+    }
 
     return 0;
 }
