@@ -9,6 +9,19 @@ Car::Car(unsigned long fgstnr, char *marke, unsigned int leistung) {
     this->print();
 }
 
+Car::Car(const Car &other){
+    copy(other);
+}
+
+Car &Car::operator=(Car const& other){
+    if(this != &other){
+        //Speicher freiräumen
+        delete[] this->marke;
+        copy(other);
+    }
+    return *this;
+}
+
 Car::~Car() {
 
 }
@@ -41,6 +54,12 @@ void Car::setFgestnr(unsigned long nr) {
 
 void Car::setLeistung(unsigned int ps) {
     this->leistung = ps;
+}
+
+void Car::copy(const Car &other) {
+    this->fgstnr = other.fgstnr;
+    this->leistung = other.leistung;              // Aufruf in C: this->marke = malloc(sizeof(char) * anzahlZeichen);
+    this->marke = strdup(other.marke);            //              strcpy(this->marke, other.marke);
 }
 
 

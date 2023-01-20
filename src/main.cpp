@@ -2,7 +2,7 @@
 #include "car.h"
 
 int main() {
-    Car p1(1001,"Beetle", 115);
+    Car p1(1001, "Beetle", 115);
     p1.print();
     Car p2(1234);
     p2.print();
