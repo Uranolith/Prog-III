@@ -23,7 +23,7 @@ Car &Car::operator=(Car const& other){
 }
 
 Car::~Car() {
-
+    delete [] marke;
 }
 
 const char *Car::getMarke() const {
