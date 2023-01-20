@@ -72,10 +72,13 @@ void Geom::print() const {
 }
 
 bool Geom::Enthaelt(Punkt p) {
-    if (typ == KREIS) {
-        
-    } else {
+    switch (this->typ){
+        case RECHTECK:
+        case QUADRAT:
+            break;
 
+        case KREIS:
+            break;
     }
     return FALSE;
 }
