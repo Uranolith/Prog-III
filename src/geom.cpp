@@ -78,7 +78,7 @@ bool Geom::Enthaelt(Punkt p) {
                                 // position +- halbe länge in x und y Richtung <= p
             break;
         case KREIS:
-                                // Betrag des Vektors v (v = p - position) kleiner oder gleich radius
+                                // Betrag des Vektors v (v = p - position) <= radius
             break;
     }
     return FALSE;
