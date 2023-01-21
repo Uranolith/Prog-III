@@ -15,7 +15,6 @@ enum Bool {
     FALSE, TRUE
 };
 
-
 class Geom {
 private:
     int typ;

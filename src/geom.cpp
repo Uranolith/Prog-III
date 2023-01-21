@@ -75,9 +75,10 @@ bool Geom::Enthaelt(Punkt p) {
     switch (this->typ){
         case RECHTECK:
         case QUADRAT:
+                                // position +- halbe länge in x und y Richtung <= p
             break;
-
         case KREIS:
+                                // Betrag des Vektors V (V = p - position) kleiner oder gleich radius
             break;
     }
     return FALSE;
