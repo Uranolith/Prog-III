@@ -13,6 +13,8 @@ int main() {
     Punkt pt2(5, 15);
     g1.Enthaelt(pt1);
     g1.Enthaelt(pt2);
+    g2.Enthaelt(pt1);
+    g2.Enthaelt(pt2);
     if (g1.getUmfang() > g2.getUmfang()) {
         std::cout << "Umfang von g1 > g2" << std::endl;
     } else {

@@ -3,8 +3,6 @@
 
 #include "punkt.h"
 
-#define PI 3.141592653
-
 enum Typ {
     RECHTECK = 1, QUADRAT, KREIS
 };

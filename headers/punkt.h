@@ -18,5 +18,7 @@ public:
     void print() const;
 };
 
+std::ostream &operator<<(std::ostream&, const Punkt&);
+
 
 #endif //PROG3_PUNKT_H

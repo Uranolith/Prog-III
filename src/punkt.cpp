@@ -14,7 +14,7 @@ void Punkt::setY(int y) {
     this->y = y;
 }
 
-void Punkt::print() const {
+void Punkt::print() const {  // obsolet, da ostream überladen
     std::cout << "(" << x << "|" << y << ")" << std::endl;
 }
 
@@ -24,4 +24,9 @@ int Punkt::getX() const {
 
 int Punkt::getY() const {
     return y;
+}
+
+std::ostream &operator<<(std::ostream &stream, const Punkt &fraction){
+    stream << "(" << fraction.getX() << "|" << fraction.getY() << ")";
+    return stream;
 }
